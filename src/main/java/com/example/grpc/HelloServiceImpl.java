@@ -10,7 +10,7 @@ public class HelloServiceImpl extends HelloServiceGrpc.HelloServiceImplBase {
         // Force gzip compression for this response
         if (responseObserver instanceof ServerCallStreamObserver) {
             ServerCallStreamObserver<?> serverCallObserver = (ServerCallStreamObserver<?>) responseObserver;
-            serverCallObserver.setCompression("gzip");
+            // serverCallObserver.setCompression("gzip");
         }
 
         // Create a large text message (example)

@@ -1,0 +1,60 @@
+echo -n $'\0\0\0\0\0' | nghttp -v -d - \                                                              ✔ │ 12:15:32
+  -H 'grpc-accept-encoding: gzip' \
+  -H 'content-type: application/grpc' \
+  http://localhost:50051/HelloService/SayHello
+[  0.003] Connected
+[  0.003] send SETTINGS frame <length=18, flags=0x00, stream_id=0>
+          (niv=3)
+          [SETTINGS_MAX_CONCURRENT_STREAMS(0x03):100]
+          [SETTINGS_INITIAL_WINDOW_SIZE(0x04):65535]
+          [SETTINGS_NO_RFC7540_PRIORITIES(0x09):1]
+[  0.003] send HEADERS frame <length=101, flags=0x04, stream_id=1>
+          ; END_HEADERS
+          (padlen=0)
+          ; Open new stream
+          :method: POST
+          :path: /HelloService/SayHello
+          :scheme: http
+          :authority: localhost:50051
+          priority: u=3
+          accept: */*
+          accept-encoding: gzip, deflate
+          user-agent: nghttp2/1.65.0
+          content-length: 5
+          grpc-accept-encoding: gzip
+          content-type: application/grpc
+[  0.003] send DATA frame <length=5, flags=0x01, stream_id=1>
+          ; END_STREAM
+[  0.059] recv SETTINGS frame <length=18, flags=0x00, stream_id=0>
+          (niv=3)
+          [SETTINGS_MAX_CONCURRENT_STREAMS(0x03):2147483647]
+          [SETTINGS_INITIAL_WINDOW_SIZE(0x04):1048576]
+          [SETTINGS_MAX_HEADER_LIST_SIZE(0x06):8192]
+[  0.059] recv WINDOW_UPDATE frame <length=4, flags=0x00, stream_id=0>
+          (window_size_increment=983041)
+[  0.059] send SETTINGS frame <length=0, flags=0x01, stream_id=0>
+          ; ACK
+          (niv=0)
+[  0.082] recv SETTINGS frame <length=0, flags=0x01, stream_id=0>
+          ; ACK
+          (niv=0)
+[  0.082] recv PING frame <length=8, flags=0x00, stream_id=0>
+          (opaque_data=00000000000004d2)
+[  0.082] send PING frame <length=8, flags=0x01, stream_id=0>
+          ; ACK
+          (opaque_data=00000000000004d2)
+[  0.117] recv (stream_id=1) :status: 200
+[  0.117] recv (stream_id=1) content-type: application/grpc
+[  0.117] recv (stream_id=1) grpc-encoding: gzip
+[  0.117] recv (stream_id=1) grpc-accept-encoding: gzip
+[  0.117] recv HEADERS frame <length=66, flags=0x04, stream_id=1>
+          ; END_HEADERS
+          (padlen=0)
+          ; First response header
+~�#l$^�=����	�K�.���~�۞�Q����Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk���Zk��3��	j��-[  0.117] recv DATA frame <length=7338, flags=0x00, stream_id=1>
+[  0.119] recv (stream_id=1) grpc-status: 0
+[  0.120] recv HEADERS frame <length=15, flags=0x05, stream_id=1>
+          ; END_STREAM | END_HEADERS
+          (padlen=0)
+[  0.120] send GOAWAY frame <length=8, flags=0x00, stream_id=0>
+          (last_stream_id=0, error_code=NO_ERROR(0x00), opaque_data(0)=[])
