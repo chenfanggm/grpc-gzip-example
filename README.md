@@ -17,3 +17,12 @@ mvn exec:java -Dexec.mainClass="com.example.grpc.Main"
 ```
 grpcurl -plaintext -v -H "grpc-accept-encoding: gzip" localhost:50051 HelloService.SayHello
 ```
+
+# nghttp
+
+```
+echo -n $'\0\0\0\0\0' | nghttp -v -d - \
+  -H 'grpc-accept-encoding: gzip' \
+  -H 'content-type: application/grpc' \
+  http://localhost:50051/HelloService/SayHello
+```
