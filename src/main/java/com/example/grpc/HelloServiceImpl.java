@@ -10,18 +10,18 @@ public class HelloServiceImpl extends HelloServiceGrpc.HelloServiceImplBase {
         // Force gzip compression for this response
         if (responseObserver instanceof ServerCallStreamObserver) {
             ServerCallStreamObserver<?> serverCallObserver = (ServerCallStreamObserver<?>) responseObserver;
-            // serverCallObserver.setCompression("gzip");
+            serverCallObserver.setCompression("gzip");
         }
 
         // Create a large text message (example)
-        StringBuilder largeMessage = new StringBuilder();
-        largeMessage.append("Hello, ").append(request.getName()).append("! Here is a large text:\n");
-        for (int i = 0; i < 10000; i++) {
-            largeMessage.append("Line ").append(i).append(": This is some repeated text to make the message large.\n");
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < 100000; i++) {
+            sb.append("HelloHelloHelloHello1234567890");
         }
+        String compressible = sb.toString();
 
         HelloResponse response = HelloResponse.newBuilder()
-                .setMessage(largeMessage.toString())
+                .setMessage(compressible.toString())
                 .build();
 
         responseObserver.onNext(response);
